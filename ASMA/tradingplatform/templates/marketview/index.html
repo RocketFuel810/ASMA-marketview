@@ -1,0 +1,82 @@
+{% extends "marketview/base.html" %}
+{% load static %}
+{% block body-block %}
+
+
+
+    
+
+    <script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+
+    <div id="autocomplete" class="autocomplete container mt-3">
+        <input class="autocomplete-input" placeholder="Search Symbols"/>
+        <ul class="autocomplete-result-list"></ul>
+    </div>
+
+    <script>
+        new Autocomplete('#autocomplete',{
+            search: input =>{
+                console.log(input)
+                const url = '/marketview/search/?symbol='+(input)
+                return new Promise(resolve =>{
+                    fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        resolve(data.data)
+                    })
+                })
+            },
+            onSubmit : result =>{
+                window.open('/marketview/foreign_market/?symbol='+(result))
+            }
+        })
+    </script> 
+
+    <div class="container">
+        <div class="row">
+            <div class="col slogan">
+                <h1 class="slogan-text">Strategy.</h1>
+                <h1 class="slogan-text">Execution.</h1>
+                <h1 class="slogan-text">Success.</h1>
+            </div>
+            <div class="col slogan2">
+                <img src="{% static "marketview/homepg.png" %}" alt="" width="600">
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- TradingView Widget BEGIN -->
+
+    <!-- <div class="tradingview-widget-container" style="height:100%;width:100%">
+    <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text">Track all markets on TradingView</span></a></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+        {
+        "autosize": true,
+        "symbol": "NASDAQ:AAPL",
+        "interval": "D",
+        "timezone": "Etc/UTC",
+        "theme": "dark",
+        "style": "1",
+        "locale": "en",
+        "allow_symbol_change": true,
+        "calendar": false,
+        "support_host": "https://www.tradingview.com"
+      }
+        </script>
+  </div> -->
+  <!-- TradingView Widget END -->
+    
+    <!-- <div class="pops container-fluid">
+        <img src="{% static "marketview/pops-removebg-preview.png" %}" alt="" width="800">
+    </div> -->
+
+    <!-- <div class="chart">
+        {{ fig|safe }}
+    </div>
+</div> -->
+
+
+{% endblock %}

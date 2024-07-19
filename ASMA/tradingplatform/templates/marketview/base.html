@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css">
+    <link rel="stylesheet" href="{% static "marketview/bootstrap.css" %}">
+    <link rel="stylesheet" href="{% static "marketview/style.css" %}">
+    <title>ASMA</title>
+</head>
+<body>
+
+    
+
+    <nav class="navbar navbar-expand-md shadow sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand brand" href="{% url 'index' %}">
+          <img src="{% static "marketview/logo-color-words.png" %}" height="50" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-set2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Markets
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-set2" href="#">Indian</a></li>
+                  <li><a class="dropdown-item text-set2" href="{% url 'marketview:foreign' %}">Foreign</a></li>
+                  <li><a class="" href="#"></a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-set2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Services
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-set2" href="#">Recommendations</a></li>
+                  <li><a class="dropdown-item text-set2" href="#">Predictions</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item text-set2" href="#">Know how we do it</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-set2" href="{% url 'marketview:news' %}">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-set2" href="#">Pricing</a>
+              </li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="nav-link text-set2">Logout</a>
+              </li>
+            {% else %}
+              <li class="nav-item">
+                  <a href="{% url 'marketview:user_login' %}" class="nav-link text-set2">Login</a>
+              </li>
+            {% endif %}
+            </ul>
+            <a href="{% url 'marketview:register' %}" class="d-flex nav-link">
+              <button class="btn bg-set text-set bg-gradient" type="submit">Get Started</button>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {% block body-block %}
+      {% endblock %}
+      
+
+
+      <script src="{% static "marketview/bootstrap.bundle.js" %}"></script>
+      
+
+
+</body>
+</html>

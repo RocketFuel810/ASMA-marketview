@@ -1,0 +1,19 @@
+{% extends "marketview/base.html" %}
+
+{% block body-block %}
+
+<div class="jumbo container mt-3 shadow-lg bg-gradient rounded-3">
+
+    <form action="" method="post">
+      {% csrf_token %}  
+      {{ select_topic.as_p }}
+      <input type="submit" class="btn bg-set text-set bg-gradient" value="Submit">
+    </form>
+
+</div>
+    
+      
+
+
+
+{% endblock %}

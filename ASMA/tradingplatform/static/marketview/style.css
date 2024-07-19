@@ -1,0 +1,68 @@
+
+.jumbo{
+    padding: 2rem;
+    margin-top: 200;
+    background-color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.slogan{
+    padding-left: 37rem;
+}
+
+.brand{
+    font-size: 200%;
+    color: #325009;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.slogan-text{
+    font-size: 600%;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-set{
+    background-color: #96C552;
+}
+
+
+.text-set{
+    color: rgb(255, 255, 255);
+}
+
+.text-set2{
+    color: #96C552;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+
+body{
+    color: #325009;
+    background-color: #95c55238;
+    background-image: url(wall3.jpg);
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.libre-baskerville-regular {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

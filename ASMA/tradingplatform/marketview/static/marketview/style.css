@@ -1,0 +1,104 @@
+
+.jumbo{
+    padding: 2rem;
+    color: #003E29;
+    background-color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    align-items: center;
+
+}
+
+
+.homepg{
+    background-color: #003E29;
+}
+
+.slogan{
+    width: 40%;
+    padding-top: 10rem;
+    padding-left: 4rem;
+}
+.slogan2{
+    padding-top: 6rem;
+    padding-left: 4rem;
+}
+
+
+.brand{
+    font-size: 200%;
+    color: #325009;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.slogan-text{
+    font-size: 600%;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav{
+    background-color: rgb(255, 255, 255);
+}
+
+.bg-set{
+    background-color: #003E29;
+}
+
+
+.text-set{
+    color: rgb(255, 255, 255);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-set2{
+    color: #003E29;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+      
+}
+
+.text-set3{
+    color: #a2c570;
+    text-align: center;
+    font-size: 500%;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    color: #a2c570;
+    background-color: #003E29;
+    /* background-image: url(wall3.jpg); */
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+
+}
+
+.libre-baskerville-regular {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.archivo-black-regular {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

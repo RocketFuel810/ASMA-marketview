@@ -1,0 +1,26 @@
+{% extends 'marketview/base.html' %}
+
+{% block body-block %}
+
+<script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+
+ <div id="autocomplete" class="autocomplete">
+    <input class="autocomplete-input" />
+    <ul class="autocomplete-result-list"></ul>
+  </div>
+
+  <script>
+     new Autocomplete('#autocomplete',{
+        search: input =>{
+            console.log(input)
+        }
+     })
+  </script>
+ 
+
+<!-- <form action="" method="get">
+    <label for="symbol">Search Symbols</label>
+    <input type="text" name="symbol" id="symbol">
+    <input type="submit" value="GO">
+</form> -->
+{% endblock %}

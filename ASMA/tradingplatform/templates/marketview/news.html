@@ -1,0 +1,60 @@
+{% extends "marketview/base.html" %}
+{% load static %}
+{% block body-block %}
+
+<div class="container-fluid">
+
+  {% if selected %}
+    <div class="p-4 container">
+      <h1 class="text-set3">News</h1>
+    </div>
+
+    {% if news_list %}
+    <div class="d-flex flex-column">
+      {% for news in news_list %}
+      <div class="d-flex align-items-center">
+        <div class="flex-shrink-0 p-3">
+          <img src="{{ news.thumbnail }}" alt="Oops! Img Not Found.." width="600" height="400" >
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <p>{{ news.title }}.</p> 
+          <p>{{ news.summary }}</p>
+          <a href="{{ news.link }}"><em>From {{ news.source }}</em></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <h1>No News Today!</h1>
+    {% endif %}
+  {% else %}
+    <form action="{% url 'marketview:news' %}" method="post">
+      {% csrf_token %}
+      <label for="topic">Topic:</label>
+      <select name="topic" id="topic">
+        <option value="blockchain">Blockchain</option>
+        <option value="earnings">Earnings</option>
+        <option value="ipo">IPO</option>
+        <option value="mergers_and_acquisitions">Mergers & Acquisitions</option>
+        <option value="financial_markets">Financial Markets</option>
+        <option value="economy_macro">Economy</option>
+        <option value="energy_transportaion">Energy & Transportation</option>
+        <option value="finance">Finance</option>
+        <option value="life_sciences">Life Sciences</option>
+        <option value="manufacturing">Manufacturing</option>
+        <option value="real_estate">Real Estate & Construction</option>
+        <option value="retail_wholesale">Retail & Wholesale</option>
+        <option value="technology">Technology</option>
+      </select>
+      <input type="submit" class="btn bg-set text-set bg-gradient" value="GO">
+    </form>
+  {% endif %}
+
+
+</div>
+    
+      
+
+
+
+{% endblock %}
